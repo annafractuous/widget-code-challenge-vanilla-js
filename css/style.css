@@ -1,0 +1,161 @@
+body {
+  padding: 1%;
+}
+.widget-area {
+  margin: 1%;
+  padding: 0;
+}
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  .widget-area {
+    margin: 0 0 10px 0;
+  }
+  .widget-area h2 {
+    font-size: 1.7em;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .sidebar-widget {
+    max-width: 350px;
+  }
+  .user-widget {
+    max-width: 600px;
+  }
+}
+.sidebar-widget {
+  padding: 0 15px;
+}
+.sidebar-widget header,
+.sidebar-widget nav {
+  box-shadow: -2px -2px 16px -4px #776b5e;
+}
+.sidebar-widget header {
+  background-color: #b1a599;
+  border-radius: 5px 5px 0 0;
+  padding: 20px 10px;
+}
+.sidebar-widget header h4 {
+  color: #fff;
+  text-transform: uppercase;
+}
+.sidebar-widget nav {
+  background-color: #f7f7f7;
+  border-radius: 0 0 5px 5px;
+}
+.sidebar-widget nav li {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding: 22px 30px;
+}
+.sidebar-widget nav li.current-item {
+  background-color: #f6f0ec;
+  border-left: 5px solid #4daf7c;
+}
+.sidebar-widget nav li.current-item span {
+  color: #e55f3a;
+}
+.sidebar-widget nav li:hover:not(.current-item) {
+  font-weight: 500;
+}
+.sidebar-widget nav li:hover:not(.current-item) span {
+  color: #776b5e;
+}
+.sidebar-widget nav .glyphicon {
+  float: right;
+}
+body {
+  color: #776b5e;
+  font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+.subtitle {
+  font-weight: 300;
+}
+.glyphicon {
+  color: #b1a599;
+}
+.user-widget {
+  border-radius: 5px;
+  box-shadow: -2px -2px 16px -4px #776b5e;
+}
+.user-widget header,
+.user-widget section,
+.user-widget nav {
+  margin: 0px;
+}
+.user-widget header {
+  border-radius: 5px 5px 0 0;
+}
+.user-widget header img {
+  border-radius: 5px 5px 0 0;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+}
+.user-widget section {
+  padding: 20px 0;
+}
+.user-widget section h2 {
+  padding-left: 0;
+  margin-top: 7px;
+}
+.user-widget section img {
+  position: absolute;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  margin-left: -48px;
+}
+.social-buttons {
+  background-color: #f6f0ec;
+  border-radius: 0 0 5px 5px;
+}
+.social-buttons li {
+  height: 50px;
+  width: 33%;
+  color: #b1a599;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 50px;
+  text-align: center;
+}
+.social-buttons li:not(.first) {
+  border-left: 1px solid #fff;
+  width: 31%;
+}
+.social-buttons li:hover span {
+  color: #776b5e;
+}
+.social-buttons li.liked span {
+  color: #e55f3a;
+}
+.social-buttons li a:hover,
+.social-buttons li a:focus {
+  background-color: inherit;
+}
+.social-buttons .glyphicon {
+  padding-right: 10px;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+.no-underline {
+  color: inherit;
+  padding: 0px !important;
+}
+.no-underline:hover,
+.no-underline:focus {
+  color: inherit;
+  text-decoration: none;
+}
+.img-padded {
+  border: 1px solid #776b5e;
+  padding: 7px;
+}
