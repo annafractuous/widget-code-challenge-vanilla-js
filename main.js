@@ -1,15 +1,35 @@
-// USER WIDGET
-var userInfo = userDetails["1"];
+var widgetTemplate = $('#user-widget').html();
+var userWidget = Handlebars.compile(widgetTemplate);
 
-// html to render from user info
-var name      =   (userInfo["firstName"] + '<br>' + userInfo["lastName"]).toUpperCase();
-var avatar    =   '<img src=' + userInfo["image"] + ' alt="avatar-image" class="img-circle img-padded"/>';
-var followers =   userInfo["followers"] + ' followers';
+var sidebarTemplate = $('#sidebar-nav').html();
+var sidebarNav = Handlebars.compile(sidebarTemplate);
 
-// dynamically set content
-document.getElementById('sidebar-name').innerHTML = name;
-document.getElementById('sidebar-profile-img').innerHTML = avatar;
-document.getElementById('sidebar-followers').innerHTML = followers;
+var users = userDetails;
+
+Handlebars.registerHelper('roundAvatar', function(url) {
+  var imgUrl = Handlebars.escapeExpression(url);
+  return new Handlebars.SafeString(
+    '<img src=' + imgUrl + ' alt="avatar-image" class="img-circle img-padded"/>'
+  );
+});
+
+Handlebars.registerHelper('coverImage', function(url) {
+  var imgUrl = Handlebars.escapeExpression(url);
+  return new Handlebars.SafeString(
+    '<img src=' + imgUrl + ' alt="user-cover-image"/>'
+  );
+});
+
+$('body').append(sidebarNav(users["1"]));
+$('body').append(userWidget(users["2"]));
+
+$('.menu-item').on("click", function(event){
+  addActiveClass(event);
+});
+
+$('#like-button').on("click", function(event){
+  toggleLiked(event);
+});
 
 // toggle red heart for liking/unliking user
 function toggleLiked(event) {
@@ -22,28 +42,6 @@ function toggleLiked(event) {
     button.className = "liked";
   }
 }
-
-
-// SIDEBAR WIDGET
-var userInfo = userDetails["2"];
-
-// html to render from user info
-var name      =   userInfo["firstName"] + ' ' + userInfo["lastName"];
-var avatar    =   '<img src=' + userInfo["image"] + ' alt="avatar-image" class="img-circle img-padded"/>';
-var cover     =   '<img src=' + userInfo["coverImage"] + ' alt="user-cover-image"/>';
-var tagline   =   userInfo["tagline"];
-var views     =   userInfo["profileViews"];
-var comments  =   userInfo["comments"];
-var likes     =   userInfo["likes"];
-
-// dynamically set content
-document.getElementById("user-widget-cover-img").innerHTML = cover;
-document.getElementById('user-widget-profile-img').innerHTML = avatar;
-document.getElementById('user-widget-name').innerHTML = name;
-document.getElementById('user-widget-tagline').innerHTML = tagline;
-document.getElementById('user-widget-views').innerHTML += views;
-document.getElementById('user-widget-comments').innerHTML += comments;
-document.getElementById('user-widget-likes').innerHTML += likes;
 
 // set currently selected menu item
 function addActiveClass(event) {
